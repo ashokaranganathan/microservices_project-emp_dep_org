@@ -14,6 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @AllArgsConstructor
 public class EmployeeService {
@@ -79,5 +84,13 @@ public class EmployeeService {
         apiResponseDto.setOrganization(organizationDto);
 
         return apiResponseDto;
+    }
+
+    public ByteArrayInputStream getDataDownloaded() throws IOException {
+        List<Employee> departments = employeeRepository.findAll();
+        List<EmployeeDto> employee = departments.stream().map(AutoMapper.MAPPER::mapToEmployeeDto).collect(Collectors.toList());
+        ByteArrayInputStream data = ExcelUtil.dataToExcel(employee);
+        return data;
+
     }
 }
