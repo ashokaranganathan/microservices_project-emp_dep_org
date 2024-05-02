@@ -29,8 +29,8 @@ class EmployeeComponent extends Component {
     render() {
         return (
             <div>
-                <div className='card col-md-6 offset-md-3'>
-                    <h3 className='text-center card-header'>View Employee Details </h3>
+                <div className='details'>
+                    <h3 className='employee'>View Employee Details </h3>
                     <div className='card-body'>
                         <div className='row'>
                             <p><strong>Employee First Name : </strong>{this.state.employee.firstName}</p>
@@ -39,7 +39,7 @@ class EmployeeComponent extends Component {
                             <p><strong>Employee Location : </strong>{this.state.employee.location}</p>
                         </div>
                     </div>
-                    <h3 className='text-center card-header'>View Department Details </h3>
+                    <h3 className='department'>View Department Details </h3>
                     <div className='card-body'>
                         <div className='row'>
                             <p><strong>Department Name : </strong>{this.state.department.departmentName}</p>
@@ -48,7 +48,7 @@ class EmployeeComponent extends Component {
                             
                         </div>
                     </div>
-                    <h3 className='text-center card-header'>View Organization Details </h3>
+                    <h3 className='organizations'>View Organization Details </h3>
                     <div className='card-body'>
                         <div className='row'>
                             <p><strong>Organization Name : </strong>{this.state.organization.organizationName}</p>

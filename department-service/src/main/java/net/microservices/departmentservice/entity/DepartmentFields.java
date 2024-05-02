@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "department")
+@Table(name = "departments")
 public class DepartmentFields {
 
     @Id
@@ -22,4 +22,5 @@ public class DepartmentFields {
     private String departmentDescription;
     @Column(name = "Department Code")
     private String departmentCode;
+
 }
