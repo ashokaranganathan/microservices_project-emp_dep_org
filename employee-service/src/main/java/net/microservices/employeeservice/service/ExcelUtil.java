@@ -13,13 +13,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class ExcelUtil {
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String location;
-    private String departmentCode;
-    private String organizationCode;
 
     public static String HEADER[] = {"id", "firstName", "lastName", "email", "location", "departmentCode", "organizationCode"};
 
