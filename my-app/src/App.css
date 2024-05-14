@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.card-body {
+  color:aliceblue;
+  font-size: small;
+  font-style: italic;
+  border-style: solid;
+  text-align: center;
+  text-justify: auto;
+}
+
