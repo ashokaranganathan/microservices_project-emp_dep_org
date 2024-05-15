@@ -30,31 +30,23 @@ class EmployeeComponent extends Component {
         return (
             <div>
                 <div className='details'>
-                    <h3 className='employee'>View Employee Details </h3>
+                    <h3> View Employee Details </h3>
                     <div className='card-body'>
-                        <div className='row'>
                             <p><strong>Employee First Name : </strong>{this.state.employee.firstName}</p>
                             <p><strong>Employee Last Name : </strong>{this.state.employee.lastName}</p>
                             <p><strong>Employee Email : </strong>{this.state.employee.email}</p>
                             <p><strong>Employee Location : </strong>{this.state.employee.location}</p>
-                        </div>
                     </div>
-                    <h3 className='department'>View Department Details </h3>
+                    <h3> View Department Details </h3>
                     <div className='card-body'>
-                        <div className='row'>
                             <p><strong>Department Name : </strong>{this.state.department.departmentName}</p>
                             <p><strong>Department Description : </strong>{this.state.department.departmentDescription}</p>
                             <p><strong>Department Code : </strong>{this.state.department.departmentCode}</p>
-                            
-                        </div>
                     </div>
-                    <h3 className='organizations'>View Organization Details </h3>
+                    <h3> View Organization Details </h3>
                     <div className='card-body'>
-                        <div className='row'>
                             <p><strong>Organization Name : </strong>{this.state.organization.organizationName}</p>
                             <p><strong>Organization Code : </strong>{this.state.organization.organizationCode}</p>
-                            
-                        </div>
                     </div>
                 </div>
             </div>
