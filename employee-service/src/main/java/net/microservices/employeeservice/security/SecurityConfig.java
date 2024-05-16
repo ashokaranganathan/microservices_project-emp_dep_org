@@ -27,7 +27,6 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults());
         return http.build();
     }
-
     @Bean
     public UserDetailsService userDetailsService(){
         UserDetails ashok = User.builder()
