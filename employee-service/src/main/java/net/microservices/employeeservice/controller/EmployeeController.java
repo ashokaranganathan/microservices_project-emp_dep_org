@@ -11,6 +11,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.ByteArrayInputStream;
@@ -24,11 +25,13 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/post")
     public ResponseEntity<EmployeeDto> postController(@RequestBody EmployeeDto employeeDto){
         return new ResponseEntity<>(employeeService.saveEmployee(employeeDto), HttpStatus.CREATED);
     }
 
+    @PreAuthorize("hasRole('USER')")
     @GetMapping("/get/{id}")
     public ResponseEntity<APIResponseDto> getByIdController(@PathVariable Long id){
         return new ResponseEntity<>(employeeService.getByEmployeeId(id),HttpStatus.OK);
