@@ -3,7 +3,6 @@ package net.microservices.employeeservice.controller;
 import lombok.AllArgsConstructor;
 import net.microservices.employeeservice.dto.APIResponseDto;
 import net.microservices.employeeservice.dto.EmployeeDto;
-import net.microservices.employeeservice.entity.Employee;
 import net.microservices.employeeservice.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -37,6 +36,7 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.getByEmployeeId(id),HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('USER')")
     @GetMapping("/download")
     private ResponseEntity<InputStreamResource> download() throws IOException {
         String fileName ="employeeData.xlsx";
